@@ -1,20 +1,23 @@
 class Link{
     constructor(bodyA,bodyB)
     {
-        //bodyA = ultimo retangulo da corda
-        //bodyB = fruta
-        var lastlink = bodyA.body.bodies.length-2;
-        this.link = Constraint.create({
-            bodyA:bodyA.body.bodies[lastlink],
-            pointA:{x:0,y:0},
-            bodyB:bodyB,
-            pointB:{x:0,y:0},
-            length:20,
-            stiffness:0.02,
+      var lastlink = bodyA.body.bodies.length-2;
+     this.link = Constraint.create(
+        {
+          bodyA:bodyA.body.bodies[lastlink],
+          pointA:{x:0,y:0},
+          bodyB:bodyB,
+          pointB:{x:0,y:0},
+          length:-10,
+          stiffness:0.01
         });
-        World.add(world,this.link);
-    }
-    remove () {
-        World.remove(world, this.link)
+        World.add(engine.world,this.link);
+    } 
+
+    detach()
+    {
+      World.remove(engine.world,this.link);
+     
     }
 }
+
