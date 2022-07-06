@@ -46,7 +46,7 @@ function setup()
   if(isMobile){
     canW = displayWidth;
     canH = displayHeight;
-    createCanvas(canW,canH);
+    createCanvas(canW+80,canH);
   }
   else{
     canW = windowWidth;
@@ -113,7 +113,7 @@ function draw()
 
   push();
   imageMode (CORNER);
-  image(backgroundImg,0,0,canW,canH);
+  image(backgroundImg,0,0,canW+80,canH);
   pop();
   
   //ground.show();
